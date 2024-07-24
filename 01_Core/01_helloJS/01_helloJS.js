@@ -9,6 +9,7 @@ console.log('안녕하세요');
 console.log('');
 
 // 파일 목록 탭 : explorer탭 이동 단축키 : ctrl + shift + e
+// 파일 목록 탭 닫기 단축키 : ctrl + b
 
 // 코드 스니펫 설정
 // 커맨드 파레트 -> snippets -> javascript
