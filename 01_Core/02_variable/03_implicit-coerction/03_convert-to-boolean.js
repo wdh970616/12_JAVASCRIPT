@@ -10,7 +10,7 @@ Falsy 값 (거짓으로 평가되는 값
 // 'JavaScript' -> Truthy값이기 때문에 true로 형변환 된 것
 if ('JavaScript') {
     console.log("if ('JavaScript')");
-}
+};
 
 if (true) console.log("if(true)");
 if (false) console.log("if(false)");
