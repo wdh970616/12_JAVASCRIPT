@@ -14,7 +14,7 @@ console.log(hi("홍길동")); // hi is not a function
 // -> 자바스크립트의 고유한 특징 함수 호이스팅 이라고 한다.
 function hello(name) {
     return `${name}님 안녕하세요!`;
-};
+}
 
 // 함수 표현식
 // 코드가 실행되는 시점에 평가되어 함수 객체가 된다.

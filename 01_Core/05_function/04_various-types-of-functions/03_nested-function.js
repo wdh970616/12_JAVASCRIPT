@@ -13,11 +13,11 @@ function outer() {
         var innerVal = '내부함수';
         // 내부 함수는 외부 함수의 변수를 참조할 수 있다.
         console.log(outerVal, innerVal);
-    };
+    }
 
     // 내부 함수도 호출해야 작동함.
     inner();
-};
+}
 
 outer();
 

@@ -8,7 +8,7 @@ function hello(name) {
     console.log(arguments);
 
     return `${name}님 안녕하세요!~`
-};
+}
 
 console.log(hello('홍길동'));
 
@@ -28,7 +28,7 @@ function hello2(name = '아무개') {
     console.log(arguments);
     if (arguments.length !== 1 || typeof name !== 'String' || name.length === 0) {
         throw new TypeError('인수는 1개여야하고, 문자열값이며, 빈 문자열을 허용하지 않습니다.')
-    };
+    }
     return `${name}님 안녕하세요!~`
 }
 // var result = hello2();

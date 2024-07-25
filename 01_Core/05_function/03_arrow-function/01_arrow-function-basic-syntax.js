@@ -21,7 +21,7 @@ console.log(message());
 
 // 명령문이 하나만 있는 경우 중괄호까지 생략 가능
 // 이 때, 함수 몸체 내부의 문이 값으로 평가될 수 있는 표현식이라면 암묵적으로 반환되기 때문에 반환문도 생략 가능
-message = () => "arrow function is simple!"
+message = () => "arrow function is simple!";
 console.log(message());
 
 // 매개변수가 있는 경우
