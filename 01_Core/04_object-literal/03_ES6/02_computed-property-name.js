@@ -17,5 +17,5 @@ var obj2 = {
     [`${prefix} + '-' + ${index}`]: index++,
     [`${prefix} + '-' + ${index}`]: index++,
     [`${prefix} + '-' + ${index}`]: index++,
-};
+}
 console.log(obj2);
