@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>03. 노드 생성과 추가</h1>
+    <pre>
+    Document.prototype.createElement(tagName) : 인수로 전달받은 태그 이름에 해당하는 요소 노드를 생성하여 반환 
+    Document.prototype.createTextNode(text) : 인수로 전달받은 텍스트 값으로 텍스트 노드를 생성하여 반환
+    Node.prototype.appendChild(childNode) : 인수로 전달받은 노드를 appendChild 메서드를 호출한 노드의 마지막 자식 노드로 추가
+    </pre>
+
+    <ul id="drink">
+        <li>커피</li>
+    </ul>
+
+    <script>
+        const $drink = document.getElementById('drink');
+
+        // 요소 노드를 생성
+        const $li = document.createElement('li');
+
+        // 텍스트 노드 생성
+        const textNode = document.createTextNode('콜라');
+
+        // 요소 노드의 자식 노드로 추가
+        $li.appendChild(textNode);
+
+        // $li 요소 노드를 $drink 요소 노드의 마지막 자식 노드로 추가
+        $drink.appendChild($li);
+    </script>
+
+    <hr>
+
+    <h3>복수(여러개) 노드 생성과 추가</h3>
+    <ul id="food">
+        <li>김치찌개</li>
+    </ul>
+
+    <script>
+        // 요소 찾기
+        const $food = document.getElementById("food");
+
+        // 컨테이너 요소인 div 활용
+        const $container = document.createElement("div");
+
+        // DocumentFragment : 별도의 서브 DOM
+        const $fragment = document.createDocumentFragment();
+
+        ['된장찌개', '고등어구이', '순대국'].forEach(text => {
+
+            const $li = document.createElement('li');
+            $li.textContent = text;
+
+            // $food.appendChild($li); // DOM이 3번 그려지면서 리플로우, 리페인트 과정이 3번 실행됨 (비효율적)
+
+            // div에 li를 추가
+            // $container.append($li);
+
+            // DocumentFragment 노드에 li를 추가
+            $fragment.appendChild($li);
+        });
+
+        // $food.appendChild($container);
+        $food.appendChild($fragment); // DocumentFragment 노드를 DOM에 추가하면 자신은 제거되고 자식 노드들만 추가된다.(리플로우, 리페인트도 한번만 실행)
+    </script>
+
+</body>
+
+</html>
