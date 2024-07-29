@@ -36,9 +36,52 @@
         const $shallowClone = $li.cloneNode(false);
 
         // $ul 깊은 복사 -> 자손노드 li, 텍스트 노드가 있는 사본
-        const $deepClone = $ul.cloneNode(true);
+        const $deepClone = $li.cloneNode(true);
 
         $ul.appendChild($shallowClone);
+        $ul.appendChild($deepClone);
+    </script>
+
+    <hr>
+
+    <h3>노드 교체</h3>
+    <pre>
+    Node.prototype.replaceChild(newChild, oldChild) 메서드는 자신을 호출한 노드의 자식 노드인 oldChild 노드를 newChild 노드로 교체한다. 
+    이 때 oldChild는 replaceChild 메서드를 호출한 노드의 자식 노드여야하고 oldChild 노드는 DOM에서 제거된다.
+    </pre>
+
+    <ul id="drink">
+        <li>커피</li>
+        <li>사이다</li>
+    </ul>
+
+    <script>
+        const $drink = document.getElementById('drink');
+        const $coffee = $drink.firstElementChild;
+
+        const $newChild = document.createElement('li');
+        $newChild.textContent = '콜라';
+
+        // 커피 요소 노드를 $newChild로 교체
+        $drink.replaceChild($newChild, $coffee);
+    </script>
+
+    <h3>노드 삭제</h3>
+    <pre>
+    Node.prototype.removeChild(child) 메서드는 child 매개변수에 인수로 전달한 노드를 DOM에서 삭제한다.
+    인수로 전달한 노드는 removeChild 메서드를 호출한 노드의 자식이어야 한다. 
+    </pre>
+
+    <ul id="food">
+        <li>파스타</li>
+        <li>피자</li>
+    </ul>
+
+    <script>
+        const $food = document.getElementById('food');
+
+        // $food 요소 노드의 마지막 요소를 DOM에서 삭제
+        $food.removeChild($food.lastElementChild);
     </script>
 
 </body>
